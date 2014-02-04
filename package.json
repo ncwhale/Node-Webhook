@@ -1,0 +1,29 @@
+{
+  "name": "qrcode",
+  "description": "QRCode / 2d Barcode api with both server side and client side support using canvas",
+  "version": "0.0.1",
+  "author": "Kouga <ncwhale@gmail.com>",
+  "keywords": [
+    "webhook",
+    "github",
+    "git"
+  ],
+  "main": "./run.js",
+  "homepage": "https://github.com/ncwhale/Node-Webhook",
+  "scripts": {
+    "start": "node run.js",
+    "test": ""
+  },
+  "dependencies": {
+    "gith": "~1.0.4",
+    "coffee-script": "~1.7.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ncwhale/Node-Webhook.git"
+  },
+  "engines": {
+    "node": ">=0.10.22"
+  }
+}
