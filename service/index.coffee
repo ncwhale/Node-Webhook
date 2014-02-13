@@ -9,7 +9,7 @@ server
 .on 'all', (payload) ->
     log 'signal received'
     exec 'git pull',
-        cwd: '~/nyaa'
+        cwd: '/home/kouga/nyaa'
     , (err, stdout, stderr) ->
         log stdout
         log stderr
