@@ -5,8 +5,9 @@ server = gith.create 3333 #port number
 
 
 server
-    repo: 'phoenixlzx / nyaacat_page'
+    repo: 'phoenixlzx/nyaacat_page'
 .on 'all', (payload) ->
+    log 'signal received'
     exec 'git pull',
         cwd: '~/nyaa'
     , (err, stdout, stderr) ->
