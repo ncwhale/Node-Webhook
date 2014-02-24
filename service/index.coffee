@@ -1,6 +1,7 @@
 log = require './log'
-gith = require 'gith'
 exec = require('child_process').exec
+gith = require 'gith'
+
 
 exports.run = (config)->
   server = gith.create (config.port ? 3333) #port number
@@ -13,7 +14,7 @@ exports.run = (config)->
           log [repo.name, cond, 'fired']
           if act.exec?
             exec act.exec,
-              cwd: act.path ? '.'
+              cwd: act.path ? './script/'
             , (err, stdout, stderr) ->
               log.error err if err?
               log stdout

@@ -1,0 +1,19 @@
+{
+    "port":3333,
+    "repo":[{
+        "name":"phoenixlzx/nyaacat_page",
+        "hook":{
+           "all":{
+                "exec": "git pull",
+                "path": "/home/kouga/nyaa"
+           }
+        }
+    },{
+        "name":"ncwhale/Node-Webhook",
+        "hook":{
+            "all":{
+                "exec": "sh update-node-webhook.sh"
+            } 
+        }
+    }]
+}
