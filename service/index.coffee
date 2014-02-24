@@ -1,20 +1,23 @@
 log = require './log'
 gith = require 'gith'
 exec = require('child_process').exec
-server = gith.create 3333 #port number
 
-
-server
-    repo: 'phoenixlzx/nyaacat_page'
-.on 'all', (payload) ->
-    log 'signal received'
-    exec 'git pull',
-        cwd: '/home/kouga/nyaa'
-    , (err, stdout, stderr) ->
-        log stdout
-        log stderr
-        null
-    
-#module.export = {}
-exports.run = ()->
-    
+exports.run = (config)->
+  server = gith.create (config.port ? 3333) #port number
+  for repo in (config.repo ? [])
+    if repo.name?
+      for cond,act of (repo.hook ? {})
+        server
+          repo: repo.name
+        .on cond, (payload) ->
+          log [repo.name, cond, 'fired']
+          if act.exec?
+            exec act.exec,
+              cwd: act.path ? '.'
+            , (err, stdout, stderr) ->
+              log.error err if err?
+              log stdout
+              log stderr
+              null
+          null
+  
