@@ -12,7 +12,7 @@
         "name":"ncwhale/Node-Webhook",
         "hook":{
             "all":{
-                "exec": "update-node-webhook.sh"
+                "exec": "sh update-node-webhook.sh"
             } 
         }
     }]
