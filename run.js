@@ -1,3 +1,4 @@
 require('coffee-script');
 var server = require('./service');
-server.run();
+var config = require('./config.json');
+server.run(config);
