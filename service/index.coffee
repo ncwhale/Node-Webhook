@@ -14,7 +14,7 @@ exports.run = (config)->
           log [repo.name, cond, 'fired']
           if act.exec?
             exec act.exec,
-              cwd: act.path ? '../script/'
+              cwd: act.path ? './script/'
             , (err, stdout, stderr) ->
               log.error err if err?
               log stdout
